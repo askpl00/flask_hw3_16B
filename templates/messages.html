@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Message Bank</h2>
+<ul>
+{% for handle, message in messages %}
+    <li>{{ handle }}: {{ message }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
