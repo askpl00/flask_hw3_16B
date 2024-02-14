@@ -8,6 +8,20 @@ def index():
     return render_template('base.html')
 
 
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    if request.method == 'POST':
+        insert_message(request)
+        return render_template('submit.html', thanks=True)
+    return render_template('submit.html')
+
+
+@app.route('/view')
+def view():
+    msgs = random_messages(5)  
+    return render_template('view.html', messages=msgs)
+
+
 def get_message_db():
     """
     This function gets a connection to the database with the messages.
@@ -64,25 +78,6 @@ def insert_message(request):
     cursor.close()
 
 
-@app.route('/submit', methods=['GET', 'POST'])
-def submit():
-    if request.method == 'POST':
-        insert_message(request)
-        return render_template('submit.html', thanks=True)
-    return render_template('submit.html')
-
-@app.route('/messages')
-def messages():
-    db = get_message_db()
-    cursor = db.cursor()
-    cursor.execute("SELECT handle, message FROM messages ORDER BY id DESC")
-    messages = cursor.fetchall()
-    return render_template('messages.html', messages=messages)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
 def random_messages(n):
     """
     Fetch a random sample of n messages from the database.
@@ -100,8 +95,9 @@ def random_messages(n):
     return random_msgs
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
 
-@app.route('/view')
-def view():
-    msgs = random_messages(5)  
-    return render_template('view.html', messages=msgs)
+
+
+
