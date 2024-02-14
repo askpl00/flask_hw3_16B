@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, g, redirect, url_for, random
-import sqlite3
+from flask import Flask, render_template, request, g, redirect, url_for
+import sqlite3, random
 
 app = Flask(__name__)
 
