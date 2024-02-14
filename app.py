@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Welcome to my Flask app!'
+    return render_template('index.html')
 
 
 DATABASE = 'messages_db.sqlite'
