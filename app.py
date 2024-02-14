@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, g, redirect, url_for
+from flask import Flask, render_template, request, g, redirect, url_for, random
 import sqlite3
 
 app = Flask(__name__)
@@ -49,3 +49,18 @@ def messages():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+def random_messages(n):
+    db = get_message_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT handle, message FROM messages")
+    all_messages = cursor.fetchall()
+    db.close()  # Don't forget to close the connection
+    return random.sample(all_messages, min(n, len(all_messages)))
+
+
+@app.route('/view')
+def view():
+    msgs = random_messages(5)  # Change the number to how many messages you want to display
+    return render_template('view.html', messages=msgs)
