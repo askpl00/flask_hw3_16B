@@ -5,9 +5,10 @@ body {
 }
 
 nav ul  {
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
