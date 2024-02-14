@@ -84,13 +84,21 @@ if __name__ == '__main__':
 
 
 def random_messages(n):
+    """
+    Fetch a random sample of n messages from the database.
+    If there are fewer than n messages, fetch all available messages.
+    """
     db = get_message_db()
     cursor = db.cursor()
-    cursor.execute("SELECT handle, message FROM messages")
-    all_messages = cursor.fetchall()
-    db.close()  
-    msgs = random.sample(all_messages, min(n, len(all_messages)))
-    return msgs
+    
+    # Fetch n random messages from the database
+    query = "SELECT handle, message FROM messages ORDER BY RANDOM() LIMIT ?"
+    cursor.execute(query, (n,))
+    random_msgs = cursor.fetchall()
+    
+    db.close()  # Ensure to close the database connection
+    return random_msgs
+
 
 
 @app.route('/view')

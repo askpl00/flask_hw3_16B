@@ -1,12 +1,12 @@
+
 <!-- templates/view.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Some Cool Messages</h2>
-{% for handle, message in messages %}
-  <div class="message">
-    <p>{{ message }}</p>
-    <p>- {{ handle }}</p>
-  </div>
-{% endfor %}
+<h2>Some Cool Random Messages</h2>
+<ul>
+    {% for handle, message in messages %}
+    <li>{{ handle }}: {{ message }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
