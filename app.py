@@ -3,6 +3,11 @@ import sqlite3
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return 'Welcome to my Flask app!'
+
+
 DATABASE = 'messages_db.sqlite'
 
 def get_message_db():
