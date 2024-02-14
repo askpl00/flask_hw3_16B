@@ -8,6 +8,7 @@ def index():
     return render_template('base.html')
 
 
+
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
