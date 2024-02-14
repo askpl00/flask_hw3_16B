@@ -15,3 +15,8 @@ nav li {
 input[type=text], input[type=submit] {
     margin-bottom: 10px;
 }
+
+
+.message {
+    margin-bottom: 20px;
+}
