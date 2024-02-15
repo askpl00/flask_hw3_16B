@@ -5,6 +5,14 @@ body {
     margin: 0 auto;
 }
 
+title {
+    font: Verdana;
+}
+
+h2 {
+    font: Verdana;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
