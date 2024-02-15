@@ -20,15 +20,16 @@ ul li {
     padding: 0; 
     margin: 0; 
     font-style: italic;
-    margin-bottom: 20px;
-    font-size: 120%;
+    margin-bottom: 30px;
+    font-size: 150%;
 }
 
 nav ul li a {
-    display: block;
+    display: inline;
     padding: 0.5rem;
     font-style: normal;
     margin-bottom: none;
+    font-size: 120%;
 
 }
 
