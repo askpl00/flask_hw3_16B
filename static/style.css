@@ -23,7 +23,7 @@ ul li {
     font-style: italic;
     margin-bottom: 30px;
     font-size: 120%;
-    color: darkgray;
+    color: dimgray;
 }
 
 nav ul li a {
@@ -32,7 +32,7 @@ nav ul li a {
     font-style: normal;
     margin-bottom: none;
     font-size: 100%;
-    color: black;
+    color: rgb(40, 10, 137);
 
 }
 
