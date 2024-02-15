@@ -21,7 +21,7 @@ ul li {
     margin: 0; 
     font-style: italic;
     margin-bottom: 30px;
-    font-size: 150%;
+    font-size: 120%;
 }
 
 nav ul li a {
@@ -29,7 +29,7 @@ nav ul li a {
     padding: 0.5rem;
     font-style: normal;
     margin-bottom: none;
-    font-size: 120%;
+    font-size: 100%;
 
 }
 
